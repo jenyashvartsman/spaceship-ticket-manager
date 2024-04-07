@@ -1,5 +1,4 @@
 import { Route } from '@angular/router';
-import { SecurePortalComponent } from './layout/secure-portal/secure-portal.component';
 
 export const appRoutes: Route[] = [
   {
@@ -12,7 +11,7 @@ export const appRoutes: Route[] = [
   },
   {
     path: 'secure',
-    component: SecurePortalComponent,
+    loadComponent: () => import('./layout/secure-portal/secure-portal.component').then(c => c.SecurePortalComponent),
     children: [
       {
         path: '',
