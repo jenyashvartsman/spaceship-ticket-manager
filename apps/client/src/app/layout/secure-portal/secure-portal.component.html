@@ -1,17 +1,27 @@
-<div>
-  <nav>
-    <ul>
-      <li>
-        <a routerLink="dashboard">Dashboard</a>
-      </li>
-      <li>
-        <a routerLink="tickets">Tickets</a>
-      </li>
-      <li>
-        <a routerLink="crew">Crew</a>
+<main class="secure-portal">
+  <!-- sidebar -->
+  <nav class="secure-portal-sidebar">
+    <ul class="secure-portal-links">
+      <!-- links -->
+      @for (link of links; track link.link) {
+        <li class="secure-portal-link">
+          <a [routerLink]="link.link" [pTooltip]="link.label" routerLinkActive="active">
+            <i [class]="link.icon" style="font-size: 1rem"></i>
+          </a>
+        </li>
+      }
+
+      <!-- sign out -->
+      <li class="secure-portal-link">
+        <a routerLink="/sign-out" pTooltip="Sign out">
+          <i class="pi pi-sign-out" style="font-size: 1rem"></i>
+        </a>
       </li>
     </ul>
   </nav>
 
-  <router-outlet/>
-</div>
+  <!-- route content -->
+  <div class="secure-portal-router">
+    <router-outlet/>
+  </div>
+</main>
