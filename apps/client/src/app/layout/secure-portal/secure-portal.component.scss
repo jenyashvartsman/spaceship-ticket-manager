@@ -1,8 +1,10 @@
+@import "variables";
+
 .secure-portal {
   position: relative;
 
   &-sidebar {
-    width: 80px;
+    width: $sidebar-width;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -11,7 +13,7 @@
 
   &-links {
     height: 100%;
-    background-color: var(--surface-300);
+    background-color: $sidebar-bg-color;
     list-style: none;
     padding: 10px 0;
     margin: 0;
@@ -27,16 +29,16 @@
 
     a {
       padding: 8px;
-      color: var(--primary-700);
+      color: $sidebar-icon-color;
       border-radius: 4px;
       transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 
       &:hover {
-        background-color: var(--surface-400);
+        background-color: $sidebar-icon-color-hover;
       }
 
       &.active {
-        color: var(--primary-500);
+        color: $sidebar-icon-color-active;
       }
     }
 
@@ -48,7 +50,7 @@
 
   &-router {
     position: relative;
-    left: 80px;
-    width: calc(100% - 80px);
+    left: $sidebar-width;
+    width: calc(100% - $sidebar-width);
   }
 }
